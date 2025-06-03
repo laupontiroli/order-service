@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: account
+  name: order
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: account
+      app: order
   template:
     metadata:
       labels:
-        app: account
+        app: order
     spec:
       containers:
-          - name: account
-            image: 'laupontiroli/account:latest'
+          - name: order
+            image: 'laupontiroli/order:latest'
             imagePullPolicy: IfNotPresent
             ports:
               - containerPort: 8080
